@@ -25,19 +25,6 @@ services:
       - PMA_HOST=mariadb
       - PMA_PORT=3306
 
-  wordpress:
-    image: wordpress
-    expose:
-      - 80001
-    ports:
-      - 80001:80
-    environment:
-      WORDPRESS_DB_HOST: mariadb
-      WORDPRESS_DB_NAME: heticdb
-      WORDPRESS_DB_USER: hetic
-      WORDPRESS_DB_PASSWORD: hetic
-    volumes:
-      - ./wordpress:/var/www/html
 
   web:
     build: .
